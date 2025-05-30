@@ -37,6 +37,7 @@ REST_FRAMEWORK = {
 }
 
 AUTH_USER_MODEL = 'api.CustomUser'
+LOGIN_URL = '/admin/login/'
 
 ALLOWED_HOSTS = []
 
@@ -49,6 +50,9 @@ SWAGGER_SETTINGS = {
             'description': "Nhập token dạng: **Bearer &lt;your_token&gt;**",
         }
     },
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
 }
 
 
